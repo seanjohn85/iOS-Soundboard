@@ -21,19 +21,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nPN-UN-pGC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u8g-ox-65k">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="nPN-UN-pGC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5NA-27-01k"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nPN-UN-pGC" secondAttribute="bottom" id="B9A-Mq-KQk"/>
-                            <constraint firstItem="nPN-UN-pGC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="TUC-qC-7my"/>
-                            <constraint firstAttribute="trailing" secondItem="nPN-UN-pGC" secondAttribute="trailing" id="V9h-Cb-sdm"/>
-                            <constraint firstItem="nPN-UN-pGC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hYD-5c-iy6"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nPN-UN-pGC" secondAttribute="bottom" id="naw-1V-rY6"/>
+                            <constraint firstAttribute="trailing" secondItem="u8g-ox-65k" secondAttribute="trailing" id="2gG-Bs-XUS"/>
+                            <constraint firstItem="u8g-ox-65k" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ii5-lb-RrJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="u8g-ox-65k" secondAttribute="bottom" id="cUB-p4-SJT"/>
+                            <constraint firstItem="u8g-ox-65k" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="oV5-Zw-iD3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jza-7g-nCX">
@@ -43,6 +41,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableview" destination="u8g-ox-65k" id="2z4-6M-j9b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
