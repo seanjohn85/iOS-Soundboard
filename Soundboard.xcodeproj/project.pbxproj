@@ -13,6 +13,7 @@
 		C94D09811F2CCF01004EE8F1 /* Soundboard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C94D097F1F2CCF01004EE8F1 /* Soundboard.xcdatamodeld */; };
 		C94D09831F2CCF01004EE8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C94D09821F2CCF01004EE8F1 /* Assets.xcassets */; };
 		C94D09861F2CCF01004EE8F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94D09841F2CCF01004EE8F1 /* LaunchScreen.storyboard */; };
+		C94D098E1F2CD225004EE8F1 /* RecordScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94D098D1F2CD225004EE8F1 /* RecordScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C94D09821F2CCF01004EE8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C94D09851F2CCF01004EE8F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C94D09871F2CCF01004EE8F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C94D098D1F2CD225004EE8F1 /* RecordScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				C94D09781F2CCF01004EE8F1 /* AppDelegate.swift */,
 				C94D097A1F2CCF01004EE8F1 /* ViewController.swift */,
+				C94D098D1F2CD225004EE8F1 /* RecordScreenViewController.swift */,
 				C94D097C1F2CCF01004EE8F1 /* Main.storyboard */,
 				C94D09821F2CCF01004EE8F1 /* Assets.xcassets */,
 				C94D09841F2CCF01004EE8F1 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			files = (
 				C94D097B1F2CCF01004EE8F1 /* ViewController.swift in Sources */,
 				C94D09811F2CCF01004EE8F1 /* Soundboard.xcdatamodeld in Sources */,
+				C94D098E1F2CD225004EE8F1 /* RecordScreenViewController.swift in Sources */,
 				C94D09791F2CCF01004EE8F1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
