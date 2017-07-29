@@ -104,7 +104,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addbtn" destination="wjE-Q6-nxM" id="BAM-pP-urB"/>
                         <outlet property="name" destination="MoP-0h-AOh" id="sOd-Jd-TZC"/>
+                        <outlet property="playbtn" destination="zyP-Z0-EHQ" id="CNQ-bb-7kt"/>
                         <outlet property="recordbutLabel" destination="5pa-rD-cM7" id="zb3-0g-RZU"/>
                     </connections>
                 </viewController>

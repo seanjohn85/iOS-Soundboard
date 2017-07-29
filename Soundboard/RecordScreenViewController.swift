@@ -10,12 +10,21 @@ import UIKit
 import AVFoundation
 
 class RecordScreenViewController: UIViewController {
-    
+    //audio modles
     var audioRec : AVAudioRecorder?
     
+    var audioPlayer : AVAudioPlayer?
+    
+    var audioURL : URL?
+    
+    //ui elements
     @IBOutlet var name: UITextField!
     
     @IBOutlet var recordbutLabel: UIButton!
+    
+    @IBOutlet var playbtn: UIButton!
+    
+    @IBOutlet var addbtn: UIButton!
     
     
     func setUpRec(){
@@ -38,10 +47,10 @@ class RecordScreenViewController: UIViewController {
             //create url for file
             let basePath : String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
             let pathComponents = [basePath, "audio.m4a"]
-            let audioURL = NSURL.fileURL(withPathComponents: pathComponents)!
-            
+            audioURL = NSURL.fileURL(withPathComponents: pathComponents)!
+            print(audioURL!)
             //create audio recorder object
-            audioRec = try AVAudioRecorder(url: audioURL, settings: settings)
+            audioRec = try AVAudioRecorder(url: audioURL!, settings: settings)
             //start audio recorder
             audioRec?.prepareToRecord()
         }catch let error as NSError{
@@ -59,14 +68,35 @@ class RecordScreenViewController: UIViewController {
         super.viewDidLoad()
 
         setUpRec()
+        playbtn.isEnabled = false
     }
     
     
     @IBAction func play(_ sender: Any) {
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOf: audioURL!)
+            audioPlayer!.play()
+        }catch{}
+        
     }
 
     
     @IBAction func rec(_ sender: Any) {
+        if audioRec!.isRecording{
+            //stop the sercording
+            audioRec?.stop()
+            //change button title
+            recordbutLabel.setTitle("Record", for: .normal)
+            //enable play btn
+            playbtn.isEnabled = true
+            
+        }else{
+            //start reording
+            audioRec?.record()
+            //change button title to stop
+            recordbutLabel.setTitle("Stop", for: .normal)
+            
+        }
     }
     
 
