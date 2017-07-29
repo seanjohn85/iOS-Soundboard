@@ -42,6 +42,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return sounds.count
     }
 
+    //set cell with audio file name
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let s = sounds[indexPath.row]
@@ -62,6 +63,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print(sounds.count)
         }catch{}
         
+    }
+    
+    
+    
+    //delete fuction
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            
+            //get context from appdelegate
+            let ctx = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            print("del")
+            let s = sounds[indexPath.row]
+            ctx.delete(s)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            do{
+                sounds = try ctx.fetch(Sound.fetchRequest())
+                tableview.reloadData()
+                print(sounds.count)
+            }catch{}
+        }
     }
 }
 
