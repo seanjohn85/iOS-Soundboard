@@ -69,6 +69,7 @@ class RecordScreenViewController: UIViewController {
 
         setUpRec()
         playbtn.isEnabled = false
+        addbtn.isEnabled = false
     }
     
     
@@ -80,7 +81,8 @@ class RecordScreenViewController: UIViewController {
         
     }
 
-    
+
+    //record button functionality
     @IBAction func rec(_ sender: Any) {
         if audioRec!.isRecording{
             //stop the sercording
@@ -89,6 +91,7 @@ class RecordScreenViewController: UIViewController {
             recordbutLabel.setTitle("Record", for: .normal)
             //enable play btn
             playbtn.isEnabled = true
+            addbtn.isEnabled = true
             
         }else{
             //start reording
@@ -99,7 +102,19 @@ class RecordScreenViewController: UIViewController {
         }
     }
     
-
+    //add a sound
     @IBAction func add(_ sender: Any) {
+        //get context from appdelegate
+        let ctx = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        //sound object in core data
+        let sound = Sound(context: ctx)
+        //names the object using the text lable
+        sound.name = name.text!
+        //puts the stored audio from the url to audio url to binary in the core data sound object
+        sound.audio = NSData(contentsOf: audioURL!)
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        //moves to previous view
+        navigationController?.popViewController(animated: true)
+        
     }
 }
